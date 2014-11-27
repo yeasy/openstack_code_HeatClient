@@ -1,6 +1,6 @@
 OpenStack HeatClient 源码分析
 ============
-[HeatClient](http://docs.openstack.org/developer/python-heatclient) 是 OpenStack Heat 引擎的客户端实现，包括一个客户端 heat 命令，和一套 Python 的 API实现了 heatclient 模块。
+[HeatClient](http://docs.openstack.org/developer/python-heatclient) 是 OpenStack Heat 引擎的客户端实现，包括一个客户端 heat 命令，和一套 Python 的 API（实现了 heatclient 模块）。
 
 本书将剖析 HeatClient 的代码。
 
