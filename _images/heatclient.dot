@@ -1,0 +1,24 @@
+//dot -Tpng xx.dot -o xx.png
+digraph G {
+    node [shape = record];
+
+    heat[label="heat commands",color=blue];
+    heatshell[label="heatclient.shell.HeatShell",color=blue];
+    shell[label="{heatclient.v1.shell|+do_stack_create\l+do_stack_show\l+do_stack_update\l...\l+do_event_list\l...\l+do_resource_list\l...\l+do_resource_type_show\l...\l+do_template_show\l...\l}",color=blue];
+    heatclient[label="heatclient.client.Client",color=blue];
+    client[label="heatclient.v1.client.Client",color=blue];
+    httpclient[label="heatclient.common.http.HTTPClient",color=blue];
+
+    //apimixin->callback[label="set_firewall_status\nfirewall_deleted"];
+    //agentapi->callbackmixin[label="create_firewall\nupdate_firewall\ndelete_firewall"];
+
+
+    heat->heatshell[style=dotted];
+    heatshell->shell;
+    heatshell->heatclient;
+    heatclient->client[style=dotted];
+    client->httpclient;
+
+    //{rank=same; rpccallback callback}
+    //{rank=same; rpcproxy apimixin}
+}
